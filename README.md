@@ -17,3 +17,5 @@ And in that bash shell:
 
     php bin/console doctrine:schema:update --force
     php bin/console app:install:std -f cards
+
+Then visit localhost:8080 to see your new, empty, debug-and-dev-mode netrunnerdb instance.
