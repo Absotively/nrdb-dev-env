@@ -16,8 +16,7 @@ docker-compose up -d
 Now run DB migrations and import cards into DB:
 
 ```sh
-docker exec -it nrdb php bin/console doctrine:schema:update --force
-docker exec -it nrdb php bin/console app:import:std -f cards
+docker exec -it nrdb-dev bash -c "php bin/console doctrine:schema:update --force; php bin/console app:import:std -f cards"
 ```
 
 Then visit [localhost:8080](http://localhost:8080) to see your new, empty, debug-and-dev-mode netrunnerdb instance.
