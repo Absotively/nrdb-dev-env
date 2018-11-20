@@ -6,6 +6,13 @@ In addition, it copies modified versions of web/.htaccess and web/app_dev.php in
 
 You will need both docker and docker-compose.
 
+First you have to actually fetch the submodules:
+
+```sh
+git submodule init
+git submodule update
+```
+
 To get the containers running:
 
 ```sh
@@ -20,3 +27,5 @@ docker exec -it nrdb-dev bash -c "php bin/console doctrine:schema:update --force
 ```
 
 Then visit [localhost:8080](http://localhost:8080) to see your new, empty, debug-and-dev-mode netrunnerdb instance.
+
+**NOTE:** If you rebuild the containers after some changes, and you get database errors in the last step, `docker-compose restart` will fix them.
