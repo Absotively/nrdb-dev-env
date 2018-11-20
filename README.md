@@ -4,6 +4,8 @@ It clones the relevant git repos inside the docker container. I know this is not
 
 In addition, it copies modified versions of web/.htaccess and web/app_dev.php into the netrunnerdb working copy. This causes two problems: You have to remember to not commit these, and any upstream changes will not be seen in a dev environment created with this. I think the second is not likely to be a problem that often, as the originals appear to be provided by Symfony and unmodified, but the first thing is decidedly unfortunate.
 
+You will need both docker and docker-compose.
+
 To get the containers running:
 
     docker-compose build
