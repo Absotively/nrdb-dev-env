@@ -8,16 +8,16 @@ You will need both docker and docker-compose.
 
 To get the containers running:
 
-    docker-compose build
-    docker-compose up -d
+```sh
+docker-compose build
+docker-compose up -d
+```
 
-Then start a bash shell in the main container (substituting the actual image name of the nrdb-dev image):
+Now run DB migrations and import cards into DB:
 
-    docker exec -it image-name bash
+```sh
+docker exec -it nrdb php bin/console doctrine:schema:update --force
+docker exec -it nrdb php bin/console app:import:std -f cards
+```
 
-And in that bash shell:
-
-    php bin/console doctrine:schema:update --force
-    php bin/console app:install:std -f cards
-
-Then visit localhost:8080 to see your new, empty, debug-and-dev-mode netrunnerdb instance.
+Then visit [localhost:8080](http://localhost:8080) to see your new, empty, debug-and-dev-mode netrunnerdb instance.

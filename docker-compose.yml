@@ -1,7 +1,8 @@
-version: '3'
+version: "3"
 
 services:
   nrdb-dev:
+    container_name: nrdb
     build: .
     ports:
       - "8080:80"
@@ -9,6 +10,7 @@ services:
       - nrdb-dev-db
 
   nrdb-dev-db:
+    container_name: nrdb-db
     image: "mysql:5"
     restart: always
     environment:
