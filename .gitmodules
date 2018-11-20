@@ -1,0 +1,6 @@
+[submodule "netrunnerdb"]
+	path = netrunnerdb
+	url = https://github.com/Alsciende/netrunnerdb.git
+[submodule "netrunner-cards-json"]
+	path = netrunner-cards-json
+	url = https://github.com/Alsciende/netrunner-cards-json.git
