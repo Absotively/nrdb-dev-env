@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nrdb-dev:
+    build: .
+    ports:
+      - "8080:80"
+    links:
+      - nrdb-dev-db
+
+  nrdb-dev-db:
+    image: "mysql:5"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: passwd
+      MYSQL_DATABASE: nrdb-dev
+      MYSQL_USER: nrdb-dev
+      MYSQL_PASSWORD: passwd
