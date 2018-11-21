@@ -4,8 +4,7 @@ MAINTAINER Jen Pollock <jen@jenpollock.ca>
 
 RUN apt-get update && apt-get install -y \
 	zlib1g-dev \
-	unzip \
-	git
+	unzip
 
 RUN docker-php-ext-install zip pdo_mysql
 
