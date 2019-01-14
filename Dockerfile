@@ -1,4 +1,4 @@
-FROM php:apache
+FROM php:7.2-apache
 
 MAINTAINER Jen Pollock <jen@jenpollock.ca>
 
