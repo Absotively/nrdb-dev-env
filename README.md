@@ -28,4 +28,4 @@ docker exec -it nrdb-dev bash -c "php bin/console doctrine:schema:update --force
 
 Then visit [localhost:8080](http://localhost:8080) to see your new, empty, debug-and-dev-mode netrunnerdb instance.
 
-**NOTE:** If you rebuild the containers after some changes, and you get database errors in the last step, `docker-compose restart` will fix them.
+**NOTE:** If you get database errors in the last step, for instance when you rebuild the containers after some changes, it usually just means you haven't waited long enough for the database server to start up. Wait thirty seconds and try again.
