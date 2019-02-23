@@ -34,7 +34,7 @@ docker exec -it nrdb-dev bash -c "${CHOWN} /var/www/html/nrdb/vendor"
 # Run composer install as www-data instead of root.
 docker exec -it nrdb-dev bash -c "su -s /bin/bash www-data -c 'composer install'"
 
-echo "Importing the card data."
+echo "Initializing the database and importing the card data."
 docker exec -it nrdb-dev bash -c "php bin/console doctrine:schema:update --force; php bin/console app:import:std -f cards"
 
 echo "TODO: import card images"
