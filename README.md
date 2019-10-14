@@ -1,8 +1,6 @@
-This is my attempt to learn both how to get a dev environment for [netrunnerdb](https://github.com/alsciende/netrunnerdb) running and how to docker. It more-or-less works, but has some serious flaws. It may be useful for other people setting up a dev environment for netrunnerdb. It is absolutely 1000% not suitable for production.
+This is my attempt to learn both how to get a dev environment for [netrunnerdb](https://github.com/alsciende/netrunnerdb) running and how to docker. Happily, other people have fixed its worst flaws. It remains absolutely 1000% not suitable for production.
 
-It clones the relevant git repos inside the docker container. I know this is not ideal, but copying them didn't seem much better for dev purposes, and mounting them as volumes led to ugly permissions issues involving nrdb/var.
-
-The Docker setup is a little clunky, but does result in no changes to the submodule repos from the running server. The database and app volumes are real docker volumes and will persist until you wipe them out.
+It has the relevant git repos as submodules, and mounts them as docker volumes, with some clunkiness due to symfony's use of a var directory inside the project directory. This results in no changes to the submodule repos from the running server. The database and app volumes are real docker volumes and will persist until you wipe them out.
 
 All file changes should be picked up without restarting docker with the exception of .htaccess and app_dev.php since those are copied into the image.
 
