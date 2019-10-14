@@ -30,3 +30,5 @@ Now prepare the rest of the files for the images and set up the database:
 Then visit [localhost:8080](http://localhost:8080) to see your new, empty, debug-and-dev-mode netrunnerdb instance.
 
 **NOTE:** If you get database errors in the last step, for instance when you rebuild the containers after some changes, it usually just means you haven't waited long enough for the database server to start up. Wait thirty seconds and try again.
+
+To update the card data, first update the submodule for the cards, then run ./import-cards.sh while your docker image is running.
