@@ -30,6 +30,7 @@ them up:
 
 ```sh
 ./prepare-and-build.sh ../netrunnerdb ../netrunner-cards-json
+docker-compose up -d
 ```
 
 Now prepare the rest of the files for the images and set up the database:
