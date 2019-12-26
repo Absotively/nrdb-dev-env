@@ -29,4 +29,10 @@ Then visit [localhost:8080](http://localhost:8080) to see your new, empty, debug
 
 **NOTE:** If you get database errors, it usually just means you haven't waited long enough for the database server to start up. Wait thirty seconds and try again.
 
-To update the card data, first update the submodule for the cards, then run ./import-cards.sh while your docker image is running.
+To update the card data, first update the submodule for the cards, then run:
+
+```sh
+./import-cards.sh
+```
+
+while your docker image is running.
