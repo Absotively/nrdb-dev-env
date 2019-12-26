@@ -1,8 +1,5 @@
 #!/bin/bash
 
-set -e
-set -u
-
 CHOWN="chown -R www-data:www-data"
 
 # Set up permissions and copy/link files on the volumes.
