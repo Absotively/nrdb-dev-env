@@ -29,9 +29,10 @@ Then visit [localhost:8080](http://localhost:8080) to see your new, empty, debug
 
 **NOTE:** If you get database errors, it usually just means you haven't waited long enough for the database server to start up. Wait thirty seconds and try again.
 
-To update the card data, first update the submodule for the cards, then run:
+To update the submodules and the card data, run:
 
 ```sh
+git submodule update --remote
 ./import-cards.sh
 ```
 
