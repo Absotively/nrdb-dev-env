@@ -46,7 +46,15 @@ rebuild the containers after some changes, it usually just means you haven't
 waited long enough for the database server to start up. Wait thirty seconds and
 try again.
 
-There are 2 handy scripts to help you out as well.  local-bash.sh will bring up
+There are  a few handy scripts to help you out as well.  local-bash.sh will bring up
 a bash shell in your nrdb-dev instance. local-mysql.sh will prompt you for the
 database password (default passwd) and connect you to the running mysql
 instance.
+
+To update the card data, run:
+
+```sh
+./import-cards.sh
+```
+
+while your docker image is running.
