@@ -14,13 +14,13 @@ docker exec -it nrdb-dev bash -c "${CHOWN} /var/www/html/nrdb/app/config"
 
 # Link up files from web, minus bundles and app_dev.php
 echo "Preparing /var/www/html/nrdb/web/"
-for FILE in $(ls netrunnerdb/web/ | grep -v bundles | grep -v app_dev.php | grep config.php)
+for FILE in $(ls netrunnerdb/web/ | grep -v bundles | grep -v app_dev.php | grep -v config.php)
 do
   BASE_FILE=$(basename ${FILE})
   docker exec -it nrdb-dev bash -c "if [ ! -L "/var/www/html/nrdb/web/${BASE_FILE}" ]; then ln -s /var/www/html/nrdb-web/${BASE_FILE} /var/www/html/nrdb/web/${BASE_FILE}; fi"
 done
 docker exec -it nrdb-dev bash -c "${CHOWN} /var/www/html/nrdb/web"
-docker exec -it nrdb-dev bash -c "mkdir /var/www/html/nrdb/web/bundles"
+docker exec -it nrdb-dev bash -c "if [ ! -d /var/www/html/nrdb/web/bundles ]; then mkdir /var/www/html/nrdb/web/bundles; fi"
 docker exec -it nrdb-dev bash -c "${CHOWN} /var/www/html/nrdb/web/bundles"
 
 docker exec -it nrdb-dev bash -c "cp /var/www/html/nrdb-bin/* /var/www/html/nrdb/bin/"
