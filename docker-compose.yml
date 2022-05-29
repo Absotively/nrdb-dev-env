@@ -7,7 +7,7 @@ services:
     depends_on:
       - nrdb-dev-db
     ports:
-      - "8080:80"
+      - "8080:8080"
     links:
       - nrdb-dev-db
     volumes:
